@@ -1,0 +1,17 @@
+Scheduler 1-stronnie ograniczony, ale trzeba umieć odpowiedzieć na to jak go ograniczyć i dlaczego
+Scheduler jak nie ma zadań to wisi na condition lub tym podobne
+Nie ma synchronizacji buffora w Schedulerze, bo on leci po kolei
+Przeciążamy operację w konsupcji i produkcji (sinusy i cosinusy)
+
+Klient zleca wykonanie zadanie schedulerowi (cięższe) i wraca robić własne obliczenia (nie czeka na wynik).
+ (asynchroniczność)
+
+Jak klient wykona swoje zadanie wcześniej, to sie wiesza.
+Jak klient wykona zadanie później, no to nic się nie dzieje.
+
+
+Future - dostęp 2 wątki, Klient (czeka na wartość) i Scheduler (ustala wartość) (robimy na wait, notify, synchronized)
+
+
+Losowy P/K - MA NIE ZAGŁADZAĆ (jak byśmy "nieudane" dodawali na koniec, to mamy właśnie zagłodzenie)
+robimy dodatkową kolejkę WEWNĄTRZ schedulera? (na pewno nie monitor) na te, które nie mógł wykonać (one mają później priorytet). Pętla na tej "małej" kolejce. Ponieważ mamy odpowiedni rozmiar bufora, to NIGDY w tej kolejce nie będzie na raz producentów i konsumentów (to by oznaczało możliwość zakleszczenia).

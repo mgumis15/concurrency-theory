@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="ISO-8859-1"?><pnml>
+    <net id="Net-One" type="P/T net">
+        <token id="Default" enabled="true" red="0" green="0" blue="0"/>
+        <place id="Closed">
+            <graphics>
+                <position x="298.0" y="217.0"/>
+            </graphics>
+            <name>
+                <value>Closed</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,0</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="Locked">
+            <graphics>
+                <position x="523.0" y="218.0"/>
+            </graphics>
+            <name>
+                <value>Locked</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,0</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="Opened">
+            <graphics>
+                <position x="86.0" y="211.0"/>
+            </graphics>
+            <name>
+                <value>Opened</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,1</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <transition id="Close door">
+            <graphics>
+                <position x="208.0" y="174.0"/>
+            </graphics>
+            <name>
+                <value>Close door</value>
+                <graphics>
+                    <offset x="-5.0" y="35.0"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>0</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <transition id="Lock door">
+            <graphics>
+                <position x="413.0" y="174.0"/>
+            </graphics>
+            <name>
+                <value>Lock door</value>
+                <graphics>
+                    <offset x="-5.0" y="35.0"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>0</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <transition id="Open door">
+            <graphics>
+                <position x="207.0" y="262.0"/>
+            </graphics>
+            <name>
+                <value>Open door</value>
+                <graphics>
+                    <offset x="-5.0" y="35.0"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>0</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <transition id="Unlock door">
+            <graphics>
+                <position x="411.0" y="263.0"/>
+            </graphics>
+            <name>
+                <value>Unlock door</value>
+                <graphics>
+                    <offset x="-5.0" y="35.0"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>0</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <arc id="Close door to Closed" source="Close door" target="Closed">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="224" y="186" curvePoint="false"/>
+            <arcpath id="001" x="296" y="222" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="Closed to Lock door" source="Closed" target="Lock door">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="324" y="223" curvePoint="false"/>
+            <arcpath id="001" x="419" y="186" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="Closed to Open door" source="Closed" target="Open door">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="296" y="235" curvePoint="false"/>
+            <arcpath id="001" x="223" y="274" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="Lock door to Locked" source="Lock door" target="Locked">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="429" y="186" curvePoint="false"/>
+            <arcpath id="001" x="521" y="224" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="Locked to Unlock door" source="Locked" target="Unlock door">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="521" y="235" curvePoint="false"/>
+            <arcpath id="001" x="427" y="275" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="Open door to Opened" source="Open door" target="Opened">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="213" y="274" curvePoint="false"/>
+            <arcpath id="001" x="111" y="229" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="Opened to Close door" source="Opened" target="Close door">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="112" y="218" curvePoint="false"/>
+            <arcpath id="001" x="214" y="186" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="Unlock door to Closed" source="Unlock door" target="Closed">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="417" y="275" curvePoint="false"/>
+            <arcpath id="001" x="323" y="234" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+    </net>
+</pnml>
